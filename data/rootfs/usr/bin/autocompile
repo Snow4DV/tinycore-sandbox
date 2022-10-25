@@ -1,0 +1,25 @@
+#/bin/sh
+cd /code
+
+if [ -f "/code/c/main.c" ]; then
+	echo "----------C-PROGRAM-COMPILATION----------"
+	gcc -o /code/executable_c /code/c/main.c -lm 
+	if [ -f "executable_c" ]; then
+		echo "____Compiled_successfully. Executing...___";
+		/code/executable_c
+	fi
+	echo ""
+	echo "-----------------------------------------"
+fi
+if [ -f "/code/c++/main.cpp" ]; then
+	echo "----------CPP-PROGRAM-EXECUTION----------"
+	g++ -o /code/executable_cpp /code/c++/main.cpp -lm
+	if [ -f "executable_cpp" ]; then
+		echo "____Compiled_successfully. Executing...___";
+		/code/executable_cpp
+	fi
+	echo "" 
+	echo "-----------------------------------------"
+fi
+
+poweroff
